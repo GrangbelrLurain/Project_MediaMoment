@@ -1,12 +1,20 @@
-{
+{ // SECTIONS EVENTS
   const sections = document.querySelectorAll('body > section');
+
   let nowIndex = 0;
 
   window.addEventListener('scroll', () => {
-   activeIndex();
-   activeCont();
-   activeBg();
+    const scrollY = window.scrollY;
+    activeIndex();
+    activeCont();
+    activeBg();
+    if(scrollY < 100){
+      scrollViewOn()
+    } else {
+      scrollViewOff()
+    }
   })
+
 
   function activeIndex(){
     const scrollY = window.scrollY;
@@ -90,5 +98,16 @@
     const height = sections[nowIndex].getBoundingClientRect().height;
     const nowPercent = (1 - ((Math.floor(((height+top)/height)*1000))/1000));
     return nowPercent;
+  }
+
+
+  // Scroll Down View ON & OFF
+  const scrollView = document.querySelector('#scroll');
+  function scrollViewOff(){
+    scrollView.classList.add('off');
+  }
+
+  function scrollViewOn(){
+    scrollView.classList.remove('off');
   }
 }

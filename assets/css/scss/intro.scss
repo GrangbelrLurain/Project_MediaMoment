@@ -17,6 +17,45 @@ body > section {
   }
 }
 
+@keyframes opacityOff {
+  0% {
+    z-index: 1;
+    opacity: 1;
+  }
+  100% {
+    z-index: -1;
+    opacity: 0;
+  }
+}
+
+#scroll {
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: opacityOn 0.4s 1;
+
+  &.off {
+    animation: opacityOff 0.4s 1;
+    animation-fill-mode: forwards;
+  }
+
+  img {
+    width: 50px;
+  }
+
+  .text {
+    font-size: 14px;
+    font-weight: 500;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    color: white;
+  }
+}
+
 #section1 {
   height: 1400px;
   background-image: linear-gradient(to bottom, #b424ff 0%, #d029e7 100%);
