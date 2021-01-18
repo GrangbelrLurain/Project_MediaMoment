@@ -1,0 +1,22 @@
+.ir_su {
+  display: none;
+}
+.container {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1280px;
+  .row {
+    height: 100%;
+    padding: 0 40px;
+  }
+}
+
+h2 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 40px;
+  font-weight: bold;
+}

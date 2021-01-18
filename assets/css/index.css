@@ -1,0 +1,843 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: "NanumSquare", sans-serif;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+  font-family: "NanumSquare", sans-serif;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.ir_su {
+  display: none;
+}
+
+.container {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.container .row {
+  height: 100%;
+  padding: 0 40px;
+}
+
+h2 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#banner {
+  height: 100vh;
+  background-image: url(../img/banner_1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#intro {
+  padding: 200px 0;
+}
+
+#news {
+  padding-bottom: 100px;
+}
+
+#contents {
+  padding: 100px 0;
+  background: #000;
+}
+
+#infor {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #000000 80%, #0a1027 100%);
+}
+
+#link {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #0a1027 0%, #1d5a92 100%);
+}
+
+@keyframes opacityOn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+
+.header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header ul {
+  display: flex;
+}
+
+.header ul li a {
+  font-size: 16px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+.header .nav_L li {
+  margin-right: 30px;
+}
+
+.header .logo {
+  position: absolute;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+}
+
+.header .logo img {
+  width: 100%;
+}
+
+.header .nav_R li {
+  margin-left: 30px;
+}
+
+.header .bar {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .header .nav_L {
+    display: none;
+  }
+  .header .nav_L.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+    animation: opacityOn 0.4s 1;
+  }
+  .header .nav_L.active li {
+    margin-right: 0;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: opacityOn 0.4s 0.2s 1;
+    animation-fill-mode: forwards;
+  }
+  .header .nav_L.active li a {
+    font-size: 20px;
+  }
+  .header .nav_R {
+    display: none;
+  }
+  .header .nav_R.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    pointer-events: none;
+    animation: opacityOn 0.4s 1;
+  }
+  .header .nav_R.active li {
+    margin-left: 0;
+    margin-top: 15px;
+    opacity: 0;
+    pointer-events: painted;
+    animation: opacityOn 0.4s 0.2s 1;
+    animation-fill-mode: forwards;
+  }
+  .header .nav_R.active li a {
+    font-size: 20px;
+  }
+  .header .bar {
+    display: block;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    background-image: linear-gradient(45deg, #ff7417 0%, #ffe817 100%);
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 800px) {
+  .header {
+    height: 50px;
+    padding-top: 20px;
+  }
+  .header .logo {
+    width: 120px;
+  }
+}
+
+.banner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.banner .title {
+  padding-bottom: 17%;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8);
+}
+
+.banner .title p {
+  color: white;
+  font-size: 70px;
+}
+
+.banner .title h1 {
+  font-size: 55px;
+  color: white;
+}
+
+.banner .title h1 .orange {
+  font-size: 70px;
+  color: #ff6700;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotateZ(0) translateY(0);
+  }
+  8% {
+    transform: rotateZ(35deg) translateY(-30px);
+  }
+  16% {
+    transform: rotateZ(-20deg) translateY(-50px);
+  }
+  24% {
+    transform: rotateZ(0) translateY(0);
+  }
+  40% {
+    transform: rotateZ(0) translateY(0);
+  }
+  48% {
+    transform: rotateZ(10deg);
+  }
+  56% {
+    transform: rotateZ(0);
+  }
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro .logo {
+  width: 200px;
+  padding-bottom: 10px;
+}
+
+.intro .logo img {
+  width: 100%;
+}
+
+.intro .logo .logo_img {
+  padding-bottom: 15px;
+  animation: wiggle 3.2s ease-out infinite;
+}
+
+.intro .text {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.news h2 {
+  padding-bottom: 100px;
+}
+
+.news .notice {
+  display: flex;
+  justify-content: space-between;
+}
+
+.news .notice .list {
+  width: 30%;
+}
+
+.news .notice .list .tag {
+  font-size: 16px;
+}
+
+.news .notice .list .day {
+  font-size: 16px;
+  float: right;
+}
+
+.news .notice .list .title {
+  height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+  word-break: keep-all;
+  white-space: pre-line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.news .notice .list a {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #94d92e;
+  font-size: 16px;
+  color: white;
+}
+
+.contents {
+  position: relative;
+  padding-bottom: 700px;
+}
+
+.contents h2 {
+  color: #ffffff;
+  padding-bottom: 50px;
+}
+
+.contents .list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.contents .list li {
+  position: relative;
+  width: 20%;
+  opacity: 0.4;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.contents .list li img {
+  width: 100%;
+}
+
+.contents .list li:hover {
+  opacity: 1;
+}
+
+.contents .list li.active {
+  opacity: 1;
+}
+
+.contents article {
+  position: absolute;
+  max-width: 1200px;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.contents article.active {
+  opacity: 1;
+  z-index: 10;
+}
+
+.contents article img {
+  width: 100%;
+}
+
+.contents article .intro {
+  position: absolute;
+  left: 30px;
+  bottom: -30px;
+  width: 400px;
+  background: white;
+}
+
+.contents article .intro h3 {
+  padding: 20px;
+}
+
+.contents article .intro .text {
+  padding: 0 20px;
+  padding-bottom: 20px;
+  word-break: keep-all;
+  white-space: pre-line;
+  font-size: 16px;
+}
+
+.contents article .intro a {
+  display: block;
+  background: #ff6700;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.infor {
+  display: flex;
+}
+
+.infor article {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.infor article h3 {
+  color: white;
+  padding-bottom: 30px;
+}
+
+.infor article .text {
+  color: white;
+  font-size: 20px;
+  white-space: pre-line;
+  word-break: keep-all;
+  padding-bottom: 30px;
+}
+
+.infor article img {
+  width: 100%;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link .logo {
+  width: 200px;
+  padding-bottom: 40px;
+}
+
+.link .logo img {
+  width: 100%;
+}
+
+.link a {
+  color: white;
+  font-size: 40px;
+}
+
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  .banner .title p {
+    font-size: 60px;
+  }
+  .banner .title h1 {
+    font-size: 45px;
+  }
+  .banner .title h1 .orange {
+    font-size: 60px;
+  }
+  .news .notice {
+    flex-direction: column;
+  }
+  .news .notice .list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .news .notice .list .tag {
+    display: inline-block;
+    width: 100px;
+    font-size: 15px;
+  }
+  .news .notice .list .day {
+    float: unset;
+    font-size: 15px;
+  }
+  .news .notice .list .title {
+    display: inline-block;
+    height: unset;
+    padding: unset;
+    margin-bottom: unset;
+    line-height: unset;
+    width: 50%;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+  .news .notice .list a {
+    font-size: 12px;
+  }
+  .contents {
+    padding-bottom: 50vw;
+  }
+  .contents article .intro {
+    width: 300px;
+  }
+  .contents article .intro .text {
+    font-size: 15px;
+  }
+  .contents article .intro a {
+    font-size: 15px;
+  }
+  .infor article h3 {
+    padding-bottom: 25px;
+  }
+  .infor article .text {
+    font-size: 15px;
+  }
+  .link a {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 800px) {
+  h2 {
+    font-size: 7vw;
+  }
+  h3 {
+    font-size: 5vw;
+  }
+  .container .row {
+    padding: 0 10px;
+  }
+  .banner .title p {
+    font-size: 10vw;
+  }
+  .banner .title h1 {
+    font-size: 7.3vw;
+  }
+  .banner .title h1 .orange {
+    font-size: 10vw;
+  }
+  .intro .logo {
+    width: 30vw;
+  }
+  .intro .text {
+    font-size: 3.6vw;
+  }
+  .news h2 {
+    padding-bottom: 8vw;
+  }
+  .news .notice .list .tag {
+    display: none;
+  }
+  .news .notice .list .day {
+    display: none;
+  }
+  .news .notice .list .title {
+    width: 80%;
+    font-size: 3vw;
+  }
+  .news .notice .list a {
+    font-size: 2.5vw;
+  }
+  .contents {
+    padding-bottom: 80vw;
+  }
+  .contents article .intro {
+    position: relative;
+    left: -5px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .contents article .intro .text {
+    font-size: 2.5vw;
+  }
+  .infor {
+    flex-direction: column;
+  }
+  .infor article {
+    width: 100%;
+  }
+  .infor article h3 {
+    padding-bottom: 15px;
+  }
+  .infor article .text {
+    font-size: 2.5vw;
+  }
+  .infor .invest {
+    padding-bottom: 30px;
+  }
+  .link .logo {
+    width: 30vw;
+    padding-bottom: 20px;
+  }
+  .link a {
+    font-size: 6vw;
+  }
+}
+
+@media (max-width: 360px) {
+  .news .notice .list .title {
+    width: 60%;
+  }
+}
+
+#footer {
+  padding: 100px 0;
+  background: black;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer .f_logo {
+  width: 50%;
+  padding-bottom: 20px;
+}
+
+.footer .f_logo img {
+  width: 120px;
+}
+
+.footer .sns {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.footer .sns a {
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+}
+
+.footer .sns .twitter {
+  background-image: url(../icon/twitter.jpg);
+}
+
+.footer .sns .instagram {
+  background-image: url(../icon/instagram.jpg);
+}
+
+.footer .sns .facebook {
+  background-image: url(../icon/facebook.jpg);
+}
+
+.footer .f_nav {
+  width: 70%;
+}
+
+.footer .f_nav ul {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.footer .f_nav ul li {
+  margin-right: 30px;
+}
+
+.footer .f_nav ul li a {
+  color: white;
+}
+
+.footer .portfolio {
+  width: 30%;
+  color: white;
+  white-space: pre-line;
+  text-align: right;
+}
+
+@media (max-width: 800px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer .f_logo {
+    width: unset;
+  }
+  .footer .f_logo img {
+    width: 20vw;
+  }
+  .footer .sns {
+    width: unset;
+    padding-bottom: 20px;
+  }
+  .footer .sns a {
+    margin-left: unset;
+    margin: 0 10px;
+  }
+  .footer .f_nav {
+    width: unset;
+    padding-bottom: 20px;
+  }
+  .footer .f_nav ul li {
+    margin: 0 10px;
+  }
+  .footer .f_nav ul li a {
+    font-size: 2.5vw;
+  }
+  .footer .portfolio {
+    width: unset;
+    text-align: center;
+    font-size: 2.5vw;
+  }
+}
